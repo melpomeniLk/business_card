@@ -1,0 +1,92 @@
+body {
+    background-color: #2C2C2C; /*#201B1B;*/
+    color: #201B1B;
+    font-family: Oswald, Sans-Serif;
+  }
+  
+  .container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+  }
+  
+  .card {
+    width: 420px;
+    height: 210px;
+    padding: 2rem;
+    margin: auto;
+    perspective: 150rem;
+    position: relative;
+  }
+  
+  .card h1 {
+    text-decoration: underline;
+    text-decoration-color: #201B1B;
+    font-size: 3em;
+  }
+
+  .card-side {
+    border-radius: 5px;
+    transition: all 0.8s ease;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1rem 2rem;
+    background-color: #CD8080;
+    width: 420px;
+    height: 210px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  }
+  
+  .card-side.back {
+    transform: rotateY(-180deg);
+  }
+  
+  .card:hover .card-side.front {
+    transform: rotateY(180deg);
+  }
+  
+  .card:hover .card-side.back {
+    transform: rotateY(0deg);
+  }
+
+  .front {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .back-left {
+    text-align: left;
+  }
+
+  .back-right {
+    text-align: right;
+    color: #FFFCFC;
+    position: relative;
+    z-index: 1;
+  }
+
+  .back-left h2 {
+    margin-bottom: 0;
+  }
+
+  .back-left h3 {
+    margin-top: 0;
+  }
+
+  ul {
+    list-style-type: none;
+    margin-top: 2.5em;
+  }
+
+  .card-side.back::after {
+    content: ' ';
+    border-bottom: calc(210px + 2rem) solid #372C2C;
+    border-left: calc(420px + 4rem) solid transparent;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
